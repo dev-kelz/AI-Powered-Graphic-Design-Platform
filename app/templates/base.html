@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Kelz Graphics Studio{% endblock %}</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { kelz: { ink: '#19221f', paper: '#f4f0e8', acid: '#d4f35f', coral: '#fa7558' } },
+          fontFamily: { sans: ['Space Grotesk', 'sans-serif'], mono: ['DM Mono', 'monospace'] }
+        }
+      }
+    }
+  </script>
+  <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/app.css">
+</head>
+<body>
+  <nav class="nav bg-kelz-paper" aria-label="Main navigation">
+    <a class="brand" href="/">KELZ<span>/</span>STUDIO</a>
+    <div class="nav-links hidden items-center gap-7 md:flex">
+      <a class="text-sm font-medium hover:text-kelz-coral" href="/marketplace">Marketplace</a>
+      <a class="text-sm font-medium hover:text-kelz-coral" href="/dashboard">Dashboard</a>
+      <a class="button small" href="/ai/generator">Create</a>
+    </div>
+    <button data-collapse-toggle="main-menu" type="button" class="inline-flex items-center rounded-lg p-2 text-sm text-kelz-ink md:hidden" aria-controls="main-menu" aria-expanded="false" aria-label="Open menu">
+      <svg class="h-6 w-6" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+    </button>
+    <div id="main-menu" class="hidden w-full md:hidden">
+      <a class="block py-2 text-sm" href="/marketplace">Marketplace</a>
+      <a class="block py-2 text-sm" href="/dashboard">Dashboard</a>
+      <a class="button small mt-2 inline-block" href="/ai/generator">Create</a>
+    </div>
+  </nav>
+  <main>{% block content %}{% endblock %}</main>
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+</body>
+</html>
