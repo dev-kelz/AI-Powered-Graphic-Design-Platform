@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+:root{
+    --ink:#19221f;
+    --paper:#f4f0e8;
+    --acid:#d4f35f;
+    --coral:#fa7558;
+    --line:#c7c3b9
+}
+
+    *{
+        box-sizing:border-box
+    }
+    
+    body{
+        margin:0;
+        background:var(--paper);
+        color:var(--ink);
+        font-family:'Space Grotesk',
+        sans-serif
+    }
+    
+    a{
+        color:inherit;
+        text-decoration:none
+    }
+    
+    .nav{
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        padding:26px 6vw;
+        border-bottom:1px solid var(--line)
+    }
+    
+    .nav .nav-links{
+        display:flex;
+        gap:28px;
+        align-items:center
+    }
+    
+    .brand{
+        font-weight:700;
+        letter-spacing:.08em
+    }
+    
+    .brand span,.eyebrow{
+        color:var(--coral)
+    }
+    
+    .hero,.generator,.result,.form-shell{
+        max-width:900px;
+        margin:0 auto;
+        padding:12vh 6vw
+    }
+    
+    .hero h1,.generator h1,.form-shell h1,.result h1,.page-head h1{
+        font-size:clamp(3.4rem,8vw,8rem);
+        line-height:.9;
+        letter-spacing:-.06em;
+        margin:18px 0 28px
+    }
+    
+    .hero em,.generator em{
+        color:var(--coral);
+        font-style:normal
+    }
+    
+    .eyebrow{
+        font:500 12px 'DM Mono',monospace;
+        letter-spacing:.15em
+    }
+    
+    .lede{
+        font-size:1.25rem;
+        max-width:430px;
+        line-height:1.5
+    }
+    
+    .actions{
+        display:flex;
+        gap:28px;
+        align-items:center;
+        margin-top:38px
+    }
+    
+    .button{
+        display:inline-block;
+        border:0;
+        background:var(--ink);
+        color:var(--paper);
+        padding:15px 22px;
+        font:500 14px 'DM Mono',monospace;cursor:pointer
+    }
+    
+    .button.small{
+        padding:10px 14px
+    }
+    
+    .text-link,.muted a,.empty a{
+        border-bottom:1px solid var(--ink)
+    }
+    
+    .feature-row{
+        display:grid;
+        grid-template-columns:repeat(3,1fr);
+        gap:30px;
+        border-top:1px solid var(--line);
+        padding:45px 6vw
+    }
+    
+    .feature-row strong{
+        font:12px 'DM Mono';
+        color:var(--coral)
+    }
+    
+    h2{
+        font-size:1.4rem
+    }
+    
+    .feature-row p,.asset p,.muted{
+        color:#67706b;
+        line-height:1.5
+    }
+    
+    .form-shell{
+        max-width:600px
+    }
+    
+    form{
+        display:grid;
+        gap:20px
+    }
+    
+    label{
+        display:grid;
+        gap:8px;
+        font:12px 'DM Mono';
+        text-transform:uppercase;
+        letter-spacing:.08em
+    }
+    
+    input,textarea{
+        border:1px solid var(--line);
+        background:transparent;
+        padding:15px;
+        font:16px 'Space Grotesk';
+        color:var(--ink)
+    }
+    
+    textarea{
+        min-height:180px;
+        resize:vertical
+    }
+    
+    .error{
+        color:var(--coral)
+    }
+    
+    .page-head{
+        display:flex;
+        justify-content:space-between;
+        align-items:end;
+        padding:9vh 6vw 5vh
+    }
+    
+    .assets{
+        padding:0 6vw 8vh
+    }
+    
+    .asset-grid{
+        display:grid;
+        grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+        gap:22px
+    }
+    
+    .asset{
+        border-top:1px solid var(--line);
+        padding-top:14px
+    }
+    
+    .asset-art{
+        height:190px;
+        background:var(--acid);
+        display:grid;
+        place-items:center;
+        font-size:5rem;
+        font-weight:700
+    }
+    
+    .asset h3{
+        margin-bottom:5px
+    }
+    
+    .asset p{
+        margin-top:0
+    }
+
+    
+    .empty{
+        margin:0 6vw;
+        padding:55px;
+        border:1px dashed var(--line);
+        text-align:center
+    }
+    
+    .result-placeholder{
+        background:var(--acid);
+        min-height:280px;
+        display:grid;
+        place-items:center;
+        font:14px 'DM Mono';
+        margin-bottom:25px
+    }
+    
+    @media(max-width:650px)
+    {
+        
+    .nav .nav-links a:not(.button){
+        display:none
+    }
+    
+    .feature-row{
+        grid-template-columns:1fr
+    }
+    .page-head{
+        display:block
+    }
+    
+    .page-head .button{
+        margin-top:20px
+    }
+    
+    .hero,.generator,.result,.form-shell{
+        padding-top:8vh
+    }
+    
+    .actions{
+        align-items:flex-start;
+        flex-direction:column
+    }
+}
